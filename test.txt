@@ -1,13 +1,5 @@
 test 1
 
-<<<<<<< HEAD
 test 2
 
 Fuck you pang
-=======
-Testtt
-
-
-test 2
-
->>>>>>> art
