@@ -1,1 +1,13 @@
 test 1
+
+<<<<<<< HEAD
+tsssss
+
+test 2 soree
+=======
+test 2
+
+test 4
+
+test 6
+>>>>>>> 7a01e6f4c7fc13fbdb575fc422d918cffe682e0c
