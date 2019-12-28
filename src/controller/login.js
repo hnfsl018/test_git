@@ -1,4 +1,4 @@
-var users = require('../../users');
+var users = require('../../users'); //
 var datas = require('../../data');
 module.exports = {
     Login ,
@@ -18,7 +18,7 @@ const {Username} = req.body;
 }
 
 
-function user(req, res) {
+function user(req, res) { 
     res.json(users.findAll());
 }
 
