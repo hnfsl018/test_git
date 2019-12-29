@@ -24,7 +24,7 @@ function TestToken (req,res){
 }
 
 
-function LoginTest(req,res,next){
+function LoginTest(req,res){
 
      const {username, password} = req.body;
      const result = users.find((users) => {
@@ -69,7 +69,7 @@ function Login(req,res){
         if (result) {
             if(username === result.username && password === result.password){
          //   if(username === "admin" && password === "0000"){
-            const token = jwt.sign( {data: username},process.env.TOKEN);
+            const token = jwt.sign( {data: username},process.env.TOKEN,{expiresIn:20});
            // res.json(datas);
                 res.send({
                     success: true,
