@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "username": "roger",
+        "password": "0000",
+        "name": "Gol D. Roger",
+        "position": "Pirate King"
+    },
+    {
+        "id": 2,
+        "username": "mrzero",
+        "password": "0000",
+        "name": "Sir Crocodile",
+        "position": "Former-Shichibukai"
+    },
+    {
+        "id": 3,
+        "username": "luffy",
+        "password": "0000",
+        "name": "Monkey D. Luffy",
+        "position": "Captain"
+    },
+    {
+        "id": 4,
+        "username": "kuzan",
+        "password": "0000",
+        "name": "Aokiji",
+        "position": "Former Marine Admiral"
+    },
+    {
+        "id": 5,
+        "username": "shanks",
+        "password": "0000",
+        "name": "'Red-Haired' Shanks",
+        "position": "The 4 Emperors"
+    }
+]

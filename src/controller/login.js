@@ -1,25 +1,101 @@
 var users = require('../../users'); //
 var datas = require('../../data');
+
+//module.exports = varifire_token;
+const jwt = require("jsonwebtoken");
+const env = require("dotenv");
+env.config();
+
 module.exports = {
     Login ,
     Test,
     user,
     data,
+    TestToken,
+    LoginTest,
 };
 
-function Login (req,res){
-const {Username} = req.body;
-    res.send({
-        Test : "Login Test",
-        data : Username
-    })
 
+
+function TestToken (req,res){ 
+   
+        res.json(datas);
 
 }
 
 
+function LoginTest(req,res,next){
+
+     const {username, password} = req.body;
+     const result = users.find((users) => {
+         return users.username == username && users.password == password;
+       })
+         if (result) {
+             if(username === result.username && password === result.password){
+         
+             const token = jwt.sign( {data: username},process.env.TOKEN);
+             next(token);
+             }else {
+                 res.send({
+                     success: false,
+                     message: "invalid data",
+                 })
+             }
+             
+         }else {
+             res.send({
+               success: false,
+               message: "invalid data 2",
+             })
+         }
+ 
+     
+ }
+
+
+function Login(req,res){
+
+   // res.json(datas);
+    const {username, password} = req.body;
+   // console.log(users[0].name);
+   // console.log(users.length-1);
+  // console.log(users)
+    const result = users.find((users) => {
+        return users.username == username && users.password == password;
+      })
+     
+
+
+        if (result) {
+            if(username === result.username && password === result.password){
+         //   if(username === "admin" && password === "0000"){
+            const token = jwt.sign( {data: username},process.env.TOKEN);
+           // res.json(datas);
+                res.send({
+                    success: true,
+                    message: "Login Success",
+                    data: token,
+                 })
+            }else {
+                res.send({
+                    success: false,
+                    message: "invalid data",
+                })
+            }
+            
+        }else {
+            res.send({
+              success: false,
+              message: "invalid data 2",
+            })
+        }
+
+    
+}
+
+
 function user(req, res) { 
-    res.json(users.findAll());
+    res.json(users);
 }
 
 function data(req, res) {
